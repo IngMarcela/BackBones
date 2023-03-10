@@ -28,8 +28,8 @@ class ZipCodeController extends Controller
 
             $settlements[] = [
                 'key' => (int) $code->id_asenta_cpcons,
-                'name' => ucwords(Str::ascii($code->d_asenta)),
-                'zone_type' => ucwords(Str::ascii($code->d_zona)),
+                'name' => Str::upper(ucwords(Str::ascii($code->d_asenta))),
+                'zone_type' => Str::upper(ucwords(Str::ascii($code->d_zona))),
                 'settlement_type' => [
                     'name' => ucwords($code->d_tipo_asenta)
                 ]
