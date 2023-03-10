@@ -18,12 +18,12 @@ class ZipCodeController extends Controller
             $locality = strtoupper(Str::ascii($code->d_ciudad));
             $federal_entity = [
                 'key' => (int) $code->c_estado,
-                'name' => ucwords(Str::ascii($code->d_estado)),
+                'name' => Str::upper(ucwords(Str::ascii($code->d_estado))),
                 'code' => $code->c_cp ?: null
             ];
             $municipality = [
                 'key' => (int) $code->c_mnpio,
-                'name' => ucwords(Str::ascii($code->d_mnpio))
+                'name' => Str::upper(Str::ascii($code->d_mnpio))
             ];
 
             $settlements[] = [
